@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+output/
+
+# Local architecture notes. Not part of the published project.
+pyqt-web-software-style/

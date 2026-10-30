@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "computer-configuration-scan-host"
+version = "0.1.0"
+description = "Windows PC configuration host — PyQt5 WebEngine + FastAPI, scan via Scan-ComputerConfiguration.ps1"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "PyQt5>=5.15",
+  "PyQtWebEngine>=5.15",
+]
+
+[project.scripts]
+ccs-host = "ccs_host.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ccs_host = ["web/static/**/*"]

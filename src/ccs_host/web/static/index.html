@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>电脑配置扫描</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/style.css?v=3" />
+</head>
+<body>
+  <div id="boot" class="page-boot">
+    <div class="page-boot-mark" aria-hidden="true"></div>
+    <p>正在校验会话…</p>
+  </div>
+  <div id="app" class="console-page" hidden>
+    <div class="console-bg" aria-hidden="true">
+      <div class="console-grid"></div>
+      <div class="console-orb console-orb-a"></div>
+      <div class="console-orb console-orb-b"></div>
+    </div>
+    <header class="topbar">
+      <div class="brand">
+        <img src="/static/favicon.svg" alt="" width="36" height="36" />
+        <div>
+          <h1>电脑配置扫描</h1>
+          <p class="brand-sub">本机配置台</p>
+        </div>
+      </div>
+      <span class="pill" id="hostMeta">本机</span>
+      <span class="spacer"></span>
+      <div class="actions">
+        <button type="button" class="primary" id="btnScan">开始扫描</button>
+        <button type="button" id="btnDownload" hidden>下载工作簿</button>
+      </div>
+      <div class="actions actions-quiet">
+        <button type="button" id="btnLogout">退出登录</button>
+        <button type="button" class="danger" id="btnExit">安全退出</button>
+      </div>
+    </header>
+    <main>
+      <section class="stats" aria-label="扫描概况">
+        <article class="stat">
+          <span>状态</span>
+          <b id="statState">待命</b>
+        </article>
+        <article class="stat">
+          <span>工作表</span>
+          <b id="statSheets">—</b>
+        </article>
+        <article class="stat">
+          <span>记录</span>
+          <b id="statRows">—</b>
+        </article>
+        <article class="stat stat-wide">
+          <span>最近工作簿</span>
+          <b id="statFile">还没有结果</b>
+        </article>
+      </section>
+      <section class="card settings">
+        <label for="outDir">导出目录</label>
+        <input id="outDir" spellcheck="false" />
+        <button type="button" id="btnApply">应用并重启</button>
+        <span class="meta" id="settingsMsg"></span>
+      </section>
+      <p class="run-hint" id="runHint">扫描由本机脚本执行，结果写入 xlsx。</p>
+      <div class="stage">
+        <nav id="tabs" class="tabs" aria-label="工作表"></nav>
+        <section class="card panel" id="panel">
+          <div class="empty-state">
+            <div class="empty-mark" aria-hidden="true"></div>
+            <h2>还没有工作簿</h2>
+            <p>点击「开始扫描」，采集处理器、硬盘、显卡和已装软件。</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

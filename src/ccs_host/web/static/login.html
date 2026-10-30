@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>电脑配置扫描 · 登录</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/login.css" />
+</head>
+<body class="login-boot-host">
+  <div id="auth-boot" class="auth-boot">
+    <div class="auth-boot-mark" aria-hidden="true"></div>
+    <p>正在校验会话…</p>
+  </div>
+  <div id="login-root" class="login-page" hidden>
+    <div class="login-bg" aria-hidden="true">
+      <div class="login-grid"></div>
+      <div class="login-orb login-orb-a"></div>
+      <div class="login-orb login-orb-b"></div>
+      <div class="login-scan"></div>
+    </div>
+    <header class="login-brand">
+      <img src="/static/favicon.svg" alt="" width="48" height="48" class="login-logo" />
+      <span class="login-brand-name">电脑配置扫描</span>
+      <div class="login-lang" role="group" aria-label="界面语言">
+        <button type="button" class="login-lang-btn active" data-locale="zh">中文</button>
+        <button type="button" class="login-lang-btn" data-locale="en">English</button>
+      </div>
+    </header>
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <div class="login-card-shine" aria-hidden="true"></div>
+        <h1 id="login-title">登录到电脑配置扫描</h1>
+        <p class="login-sub">使用本机账号继续</p>
+        <form class="login-form" id="login-form" autocomplete="on">
+          <label class="login-field">
+            <span data-k="username">用户名</span>
+            <input name="username" id="login-user" autocomplete="username" autofocus required />
+          </label>
+          <label class="login-field">
+            <span class="login-field-row">
+              <span data-k="password">密码</span>
+              <button type="button" class="login-ghost" id="login-toggle-pw">显示</button>
+            </span>
+            <input name="password" id="login-pass" type="password" autocomplete="current-password" required />
+          </label>
+          <div class="login-error" id="login-error" role="alert" hidden></div>
+          <button type="submit" class="login-submit" id="login-submit">登录</button>
+        </form>
+      </section>
+      <aside class="login-aside">
+        <p id="login-aside">默认用户 ccs，密码见 config/host.json。删掉其中的 password 后，该默认密码失效。</p>
+        <p class="login-aside-muted">会话 Cookie · 7 天 · HttpOnly</p>
+      </aside>
+    </main>
+    <footer class="login-footer">
+      <span>127.0.0.1</span>
+      <span class="login-footer-dot" aria-hidden="true">·</span>
+      <span>本机配置台</span>
+    </footer>
+  </div>
+  <script src="/static/login.js"></script>
+</body>
+</html>
